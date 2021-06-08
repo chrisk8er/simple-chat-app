@@ -1,7 +1,6 @@
 {
   "scripts": {
-    "start": "node dist/index.js",
-    "postinstall": "tsc && mv -i -v public dist/ && rm -v -rf src",
+    "start": "ts-node src/index.ts",
     "dev": "nodemon --watch './src/**/*.ts' --exec 'ts-node' ./src/index.ts"
   },
   "devDependencies": {
@@ -15,5 +14,7 @@
     "express": "^4.17.1",
     "socket.io": "^2.3.0"
   },
-  "engines": { "node": "12.13.0" }
+  "engines": {
+    "node": "12.13.0"
+  }
 }
