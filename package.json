@@ -1,4 +1,7 @@
 {
+  "name": "vidio-chat",
+  "version": "0.1.0",
+  "private": true,
   "scripts": {
     "start": "node dist/index.js",
     "postinstall": "tsc && mv -i -v public dist/ && rm -v -rf src",
