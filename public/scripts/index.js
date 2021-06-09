@@ -131,9 +131,9 @@ peerConnection.ontrack = function ({ streams: [stream] }) {
   }
 };
 
-navigator.mediaDevices.getUserMedia(
-  { video: true, audio: true },
-  (stream) => {
+navigator.mediaDevices
+  .getUserMedia({ video: true, audio: true })
+  .then((stream) => {
     const localVideo = document.getElementById('local-video');
     if (localVideo) {
       localVideo.srcObject = stream;
@@ -142,8 +142,5 @@ navigator.mediaDevices.getUserMedia(
     stream
       .getTracks()
       .forEach((track) => peerConnection.addTrack(track, stream));
-  },
-  (error) => {
-    console.warn(error.message);
-  },
-);
+  })
+  .catch((error) => console.warn(error.message));
